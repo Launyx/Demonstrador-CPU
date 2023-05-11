@@ -20,7 +20,6 @@ public class Memoria {
     @Override
     public String toString(){
         StringBuilder st = new StringBuilder();
-        System.out.println("");
         for(int i=0; i < memoria.size(); i++){
             st.append("Local de memória " + (i + 701) + ": " + memoria.get(i) + "\n");
         }

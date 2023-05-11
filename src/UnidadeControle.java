@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class UnidadeControle {
     public static void main(String[] args) throws InterruptedException {
 
-        Memoria memoria = new Memoria();
+        Registradores registradores = new Registradores();
         Barramentos barramentos = new Barramentos();
+        Memoria memoria = new Memoria();
         ULA ULA = new ULA();
 
         Scanner tec = new Scanner(System.in);
 
         boolean perguntaRegistro = false;
-        boolean perguntaSimbolo = false;
         boolean sistema = false;
         boolean continua = false;
         
@@ -33,7 +33,7 @@ public class UnidadeControle {
         }
 
         // Loop para continuar o sistema até que o usuário saia
-        while(sistema == false){
+        while(sistema == false){ // VERIFICAR POSIÇÃO DESSE LOOP PAR VER A REAL POSIÇÃO DELE
 
             // Condição para verificar se o usuario digitou "memoria" ou "registradores"
             if(localRegistro.equalsIgnoreCase("memoria")){
@@ -54,7 +54,15 @@ public class UnidadeControle {
 
                     Thread.sleep(1000);
 
+                    System.out.println("");
                     System.out.println(memoria);
+
+                    registradores.registrar(n1);
+                    registradores.registrar(n2);
+
+                    Thread.sleep(1000);
+
+                    System.out.println(registradores);
 
                     // Passa os valores presentes nos locais de memória para os barramentos A e B
                     barramentos.setBarramentoA(memoria.getMemoria(0));
@@ -73,7 +81,7 @@ public class UnidadeControle {
 
                         Thread.sleep(1000);
 
-                        resultado = ULA.calcular(resultado, operador, n1, n2);
+                        resultado = ULA.calcular(resultado, operador, barramentos.getBarramentoA(), barramentos.getBarramentoB());
                     }
 
                     Thread.sleep(1000);
@@ -82,7 +90,27 @@ public class UnidadeControle {
                     System.out.println("");
                     System.out.println(barramentos);
 
-                    
+                    Thread.sleep(1000);
+
+                    registradores.setRegistrador(0, barramentos.getBarramentoC());
+
+                    System.out.println(registradores);
+
+                    Thread.sleep(1000);
+
+                    memoria.registrar(registradores.getRegistrador(0));
+
+                    System.out.println(memoria);
+
+                    Thread.sleep(1000);
+
+                    System.out.println("Gostaria de sair? S/N");
+                    String sair = tec.nextLine();
+
+                    if(sair.equalsIgnoreCase("s")){
+                        continua = true;
+                    }
+                
                 }
             }else if(localRegistro.equalsIgnoreCase("registradores")){
 
