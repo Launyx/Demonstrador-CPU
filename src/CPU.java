@@ -6,7 +6,7 @@ public class CPU {
     public static void main(String[] args) throws Exception {
         
         Scanner tec = new Scanner(System.in);
-        double Memoria[] = new double[2];
+        double Memoria[] = new double[3];
         double Registradores[] = new double[2];
         double ULA[] = new double[2];
         double resultado = 0.0;
@@ -17,8 +17,9 @@ public class CPU {
         boolean continua = false;
         boolean testaSimbolo = false;
         
+        System.out.println("Gostaria de regitrar os valores na MEMORIA ou direto nos REGISTRADORES?");
         while(localRegistro == false){
-            System.out.println("Gostaria de regitrar os valores na MEMORIA ou direto nos REGISTRADORES?");
+            
             registrar = tec.nextLine().toUpperCase();
 
             if(registrar.equalsIgnoreCase("memoria")){
@@ -29,8 +30,6 @@ public class CPU {
                 System.out.println("Opção inválida, digite \"MEMORIA\" ou \"REGISTRADORES\"!");
             }
         }
-
-        System.out.println(registrar);
 
         while(sistema == false){
             if (registrar.equalsIgnoreCase("memoria")){
@@ -91,7 +90,7 @@ public class CPU {
         
                             case '+':
                                 resultado = ULA[0] + ULA[1];
-                                System.out.println("ULA: " + ULA[0] + " + " + ULA[1] + " = " + resultado);
+                                System.out.println("ULA: " + ULA[0] + " + " + ULA[1] + " = " + resultado + "\n");
         
                                 if (resultado > 0){
                                     System.out.println("[X] Positivo");
@@ -117,7 +116,7 @@ public class CPU {
         
                             case '-':
                                 resultado = ULA[0] - ULA[1];
-                                System.out.println("ULA: " + ULA[0] + " - " + ULA[1] + " = " + resultado);
+                                System.out.println("ULA: " + ULA[0] + " - " + ULA[1] + " = " + resultado + "\n");
         
                                 if (resultado > 0){
                                     System.out.println("[X] Positivo");
@@ -142,7 +141,7 @@ public class CPU {
                                 break;
                             case '*':
                                 resultado = ULA[0] * ULA[1];
-                                System.out.println("ULA: " + ULA[0] + " * " + ULA[1] + " = " + resultado);
+                                System.out.println("ULA: " + ULA[0] + " * " + ULA[1] + " = " + resultado + "\n");
         
                                 if (resultado > 0){
                                     System.out.println("[X] Positivo");
@@ -167,8 +166,9 @@ public class CPU {
                                 break;
                             case '/':
                                 resultado = ULA[0] / ULA[1];
-                                System.out.println("ULA: " + ULA[0] + " / " + ULA[1] + " = " + resultado);
+                                System.out.println("ULA: " + ULA[0] + " / " + ULA[1] + " = " + resultado + "\n");
         
+                                // Condições para mostrar se o número é positivo, zero ou negativo
                                 if (resultado > 0){
                                     System.out.println("[X] Positivo");
                                 }else{
@@ -192,8 +192,9 @@ public class CPU {
                                 break;
                             case '%':
                                 resultado = ULA[0] % ULA[1];
-                                System.out.println("ULA: " + ULA[0] + " % " + ULA[1] + " = " + resultado);
+                                System.out.println("ULA: " + ULA[0] + " % " + ULA[1] + " = " + resultado + "\n");
         
+                                // Condições para mostrar se o número é positivo, zero ou negativo
                                 if (resultado > 0){
                                     System.out.println("[X] Positivo");
                                 }else{
@@ -216,34 +217,34 @@ public class CPU {
                                 testaSimbolo = true;
                                 break;
                             case '^':
-                            resultado = Math.pow(ULA[0], ULA[1]);
-                            System.out.println("ULA: " + ULA[0] + " ^ " + ULA[1] + " = " + resultado);
+                                resultado = Math.pow(ULA[0], ULA[1]);
+                                System.out.println("ULA: " + ULA[0] + " ^ " + ULA[1] + " = " + resultado + "\n");
         
-                            if (resultado > 0){
-                                System.out.println("[X] Positivo");
-                            }else{
-                                System.out.println("[ ] Positivo");
-                            }
+                            // Condições para mostrar se o número é positivo, zero ou negativo
+                                if (resultado > 0){
+                                    System.out.println("[X] Positivo");
+                                }else{
+                                    System.out.println("[ ] Positivo");
+                                }
+            
+                                if (resultado == 0){
+                                    System.out.println("[X] Zero");
+                                }else{
+                                    System.out.println("[ ] Zero");
+                                }
+                                
+                                if (resultado < 0){
+                                    System.out.println("[X] Negativo");
+                                }else{
+                                    System.out.println("[ ] Negativo");
+                                }
         
-                            if (resultado == 0){
-                                System.out.println("[X] Zero");
-                            }else{
-                                System.out.println("[ ] Zero");
-                            }
-                            
-                            if (resultado < 0){
-                                System.out.println("[X] Negativo");
-                            }else{
-                                System.out.println("[ ] Negativo");
-                            }
-        
-                            Thread.sleep(1000);
-                            testaSimbolo = true;
+                                Thread.sleep(1000);
+                                testaSimbolo = true;
                                 break;
                             default:
                                 System.out.println("Símbolo invalido!");
                                 break;
-        
                         }
                     }
         
@@ -263,11 +264,12 @@ public class CPU {
         
                     Thread.sleep(1000);
         
-                    Array.set(Memoria, 0, Registradores[0]);
+                    Array.set(Memoria, 2, Registradores[0]);
         
                     System.out.println("-------------------------------------");
                     System.out.println("Local de memoria 701: " + Memoria[0]);
                     System.out.println("Local de memoria 702: " + Memoria[1]);
+                    System.out.println("Local de memoria 703: " + Memoria[2]);
                     System.out.println("-------------------------------------");
                     testaSimbolo = false;
         
@@ -515,7 +517,6 @@ public class CPU {
         
                     System.out.println("-------------------------------------");
                     System.out.println("Local de memoria 701: " + Memoria[0]);
-                    System.out.println("Local de memoria 702: " + Memoria[1]);
                     System.out.println("-------------------------------------");
                     
                     testaSimbolo = false;
