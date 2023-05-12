@@ -8,8 +8,12 @@ public class Registradores {
 
     }
 
-    public void registrar(double n1){
+    public void registrarVazio(double n1){
         registradores.add(n1);
+    }
+
+    public void registrarNovo(int local, double n1){
+        registradores.set(local, n1);
     }
 
     public double getRegistrador(int local){
@@ -17,13 +21,14 @@ public class Registradores {
         return valor;
     }
 
-    public void setRegistrador(int local, double numero){
-        registradores.set(local, numero);
+    public int getArraySize(){
+        return registradores.size();
     }
+
     @Override
     public String toString(){
         StringBuilder st = new StringBuilder();
-        for(int i=0; i < registradores.size(); i++){
+        for(int i = 0; i < registradores.size(); i++){
             st.append("Registrador " + (i + 1) + ": " + registradores.get(i) + "\n");
         }
         return st.toString();

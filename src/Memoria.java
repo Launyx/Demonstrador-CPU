@@ -12,6 +12,10 @@ public class Memoria {
         memoria.add(n1);
     }
 
+    public int getTamanhoMemoria(){
+        return memoria.size();
+    }
+
     public double getMemoria(int local){
         double valor = memoria.get(local);
         return valor;

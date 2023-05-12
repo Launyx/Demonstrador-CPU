@@ -1,0 +1,1 @@
+Projeto de um "simulador" de UC (unidade de controle) da CPU (Unidade central de processamento), demonstrando o caminho seguido pelos dados partindo da memória principal (memória RAM), passando pelos registradores até a ULA (unidade lógica e aritmética) que faz o cálculo desejado e retorna o valor para os registradores e então de volta para a memória principal.
