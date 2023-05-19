@@ -46,8 +46,8 @@
       <children>
             <AnchorPane layoutX="273.0" layoutY="14.0" prefHeight="128.0" prefWidth="288.0" style="-fx-border-color: green;">
                <children>
-                  <TextField fx:id="Registro1" editable="false" layoutX="119.0" layoutY="36.0" />
-                  <TextField fx:id="Registro2" editable="false" layoutX="119.0" layoutY="67.0" />
+                  <TextField fx:id="Registro1" layoutX="119.0" layoutY="36.0" />
+                  <TextField fx:id="Registro2" layoutX="119.0" layoutY="67.0" />
                   <Text layoutX="21.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrador 1:" />
                   <Text layoutX="21.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrador 2:" />
                   <Text layoutX="96.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registradores" textAlignment="CENTER">
@@ -70,12 +70,12 @@
                   <Text layoutX="9.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local de memória 704:" />
                   <Text layoutX="9.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local de memória 705:" />
                   <Text layoutX="9.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Local de memória 706:" />
-                  <TextField fx:id="memoria1" layoutX="138.0" layoutY="32.0" prefHeight="25.0" prefWidth="53.0" />
-                  <TextField fx:id="memoria2" layoutX="138.0" layoutY="57.0" prefHeight="25.0" prefWidth="53.0" />
-                  <TextField fx:id="memoria3" layoutX="138.0" layoutY="82.0" prefHeight="25.0" prefWidth="53.0" />
-                  <TextField fx:id="memoria4" layoutX="138.0" layoutY="107.0" prefHeight="25.0" prefWidth="53.0" />
-                  <TextField fx:id="memoria5" layoutX="138.0" layoutY="132.0" prefHeight="25.0" prefWidth="53.0" />
-                  <TextField fx:id="memoria6" layoutX="138.0" layoutY="157.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria1" editable="false" layoutX="138.0" layoutY="32.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria2" editable="false" layoutX="138.0" layoutY="57.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria3" editable="false" layoutX="138.0" layoutY="82.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria4" editable="false" layoutX="138.0" layoutY="107.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria5" editable="false" layoutX="138.0" layoutY="132.0" prefHeight="25.0" prefWidth="53.0" />
+                  <TextField fx:id="memoria6" editable="false" layoutX="138.0" layoutY="157.0" prefHeight="25.0" prefWidth="53.0" />
                </children>
             </AnchorPane>
             <Polyline fill="#489000" layoutX="250.0" layoutY="68.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="-90.0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" strokeType="INSIDE" />
@@ -121,8 +121,7 @@
                   <TextField fx:id="barramentoB" editable="false" layoutX="29.0" layoutY="24.0" prefHeight="25.0" prefWidth="63.0" />
                </children>
             </AnchorPane>
-            <Polyline fill="#489000" layoutX="591.0" layoutY="35.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="-90.0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" strokeType="INSIDE" />
-            <Polyline fill="#489000" layoutX="591.0" layoutY="104.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="-90.0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" strokeType="INSIDE" />
+            <Polyline fill="#489000" layoutX="592.0" layoutY="65.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="-90.0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" strokeType="INSIDE" />
             <Polyline fill="#489000" layoutX="668.0" layoutY="179.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" scaleX="0.5" scaleY="0.5" scaleZ="0.5" strokeType="INSIDE" />
             <AnchorPane layoutX="166.0" layoutY="334.0" prefHeight="61.0" prefWidth="120.0" style="-fx-border-color: green;">
                <children>
@@ -136,9 +135,9 @@
             </AnchorPane>
             <Polyline fill="#489000" layoutX="375.0" layoutY="355.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="90.0" scaleX="0.5" scaleY="0.5" scaleZ="0.5" strokeType="INSIDE" />
             <Polyline fill="#489000" layoutX="126.0" layoutY="255.0" points="-50.0, -40.0, 50.0, -40.0, 0.0, 60.0, -50.0, -40.0" rotate="180.0" scaleX="0.7" scaleY="0.7" scaleZ="0.7" strokeType="INSIDE" />
-            <Button fx:id="iniciarM" layoutX="286.0" layoutY="202.0" mnemonicParsing="false" onAction="#IniciarM" text="Iniciar" />
-            <Button fx:id="resetarM" layoutX="347.0" layoutY="202.0" mnemonicParsing="false" onAction="#ResetarM" text="Resetar" />
-            <Button fx:id="retornarR" layoutX="60.0" layoutY="443.0" mnemonicParsing="false" onAction="#retornaTelaM" text="Retornar" />
+            <Button fx:id="iniciarR" layoutX="286.0" layoutY="202.0" mnemonicParsing="false" onAction="#IniciarR" text="Iniciar" />
+            <Button fx:id="resetarR" layoutX="347.0" layoutY="202.0" mnemonicParsing="false" onAction="#ResetarR" text="Resetar" />
+            <Button fx:id="retornarM" layoutX="60.0" layoutY="443.0" mnemonicParsing="false" onAction="#RetornaTelaR" text="Retornar" />
       </children>
     </AnchorPane>
   </children>
